@@ -1,0 +1,5 @@
+*.pdf
+target/*
+.project/*
+.DS_Store
+
