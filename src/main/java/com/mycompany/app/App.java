@@ -24,7 +24,7 @@ public class App {
 	 *             If there is an error parsing the document.
 	 */
 	public static void main(String[] args) throws Exception {
-		if (args.length != 1) {
+		if (args.length != 2) {
 			usage();
 		} else {
 			PDDocument document = null;
@@ -53,7 +53,7 @@ public class App {
 					item = item.getNextSibling();
 				}
 				
-				document.save("new.pdf");
+				document.save(args[1]);
 			} finally {
 				if (document != null) {
 					document.close();
@@ -67,7 +67,7 @@ public class App {
 	 */
 	private static void usage() {
 		System.err
-				.println("Usage: java org.apache.pdfbox.examples.pdmodel.CreateBookmarks <input-pdf> <output-pdf>");
+				.println("Usage: com.mycompany.app.App <input-pdf> <output-pdf>");
 	}
 
 }
